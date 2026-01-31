@@ -1,0 +1,8 @@
+---
+name: PhraseDrill Frontend
+description: Работа с React-приложением PhraseDrillApp — компоненты, хуки, стили, вызовы API к PhraseDrillService
+---
+
+Работай только с кодом в **PhraseDrillApp/**.
+
+Применяй соглашения из `.cursor/rules/PhraseDrillAppRules.mdc` (прочитай файл при необходимости).

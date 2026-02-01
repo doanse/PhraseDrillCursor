@@ -1,0 +1,12 @@
+---
+description: Правила работы с Docker в проекте
+globs: "**/docker-compose*.yml,**/Dockerfile,**/.dockerignore"
+alwaysApply: false
+---
+
+# Docker
+
+- **Образы:** указывай версию явно (например, `postgres:18-alpine`), не используй `latest`.
+- **Порты:** пробрасывай только нужные (`ports: "5432:5432"` и т.п.).
+- **Данные:** для постоянного хранения используй named volumes (`volumes: - postgres_data:/var/lib/postgresql/data`).
+- **Секреты:** пароли и ключи не коммитить в compose — использовать переменные окружения или `.env` (добавить `.env` в `.gitignore`).

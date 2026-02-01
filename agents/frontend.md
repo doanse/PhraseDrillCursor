@@ -1,5 +1,6 @@
 ---
 name: PhraseDrill Frontend
+model: gpt-5.2-codex
 description: Работа с React-приложением PhraseDrillApp — компоненты, хуки, стили, вызовы API к PhraseDrillService
 ---
 

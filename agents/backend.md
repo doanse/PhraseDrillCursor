@@ -1,5 +1,6 @@
 ---
 name: PhraseDrill Backend
+model: gpt-5.2-codex
 description: Работа с ASP.NET Core API PhraseDrillService — контроллеры, сервисы, DI, обработка ошибок
 ---
 

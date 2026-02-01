@@ -5,6 +5,6 @@ description: Работа с Docker — docker-compose, образы, конте
 
 Работай с **Docker-конфигурацией** проекта: `docker-compose*.yml`, `Dockerfile`, `.dockerignore`.
 
-Применяй правила из `.cursor/rules/DockerRules.mdc` (прочитай файл при необходимости).
+Применяй правила из `.cursor/rules/DockerRules.mdc` (прочитай файл при необходимости!).
 
 Остальной код (контроллеры, фронт) не меняй — только контейнеры и их настройка.

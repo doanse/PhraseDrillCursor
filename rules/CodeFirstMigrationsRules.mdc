@@ -1,0 +1,14 @@
+---
+description: Правила работы с EF Core Code First и миграциями
+globs: "**/Data/**/*.cs,**/Migrations/**/*.cs,**/*DbContext*.cs"
+alwaysApply: false
+---
+
+# Code First и миграции (EF Core)
+
+- **Схема только из кода:** изменения структуры БД вноси через сущности и `OnModelCreating` в DbContext; не меняй схему вручную в БД, если используешь миграции.
+- **После изменения сущностей или конфигурации** создавай миграцию: `dotnet ef migrations add <ИмяМиграции>` из папки проекта с DbContext (например `PhraseDrillService\PhraseDrillService`).
+- **Имена миграций** — осмысленные: `AddPhrasesTable`, `AddUserIdToPhrases`, `RenameTextToContent`, а не только `Update1`.
+- **Применение к БД:** `dotnet ef database update`. Перед этим контейнер/сервер PostgreSQL должен быть запущен; строка подключения — в `appsettings.Development.json` или `appsettings.json`.
+- **Уже применённые миграции не редактировать.** Если нужно поправить — либо новая миграция, либо откат (`dotnet ef database update <ПредыдущаяМиграция>`) и только потом правка и повторное применение.
+- **Сущности:** ключ задавать явно (`HasKey`); для строк при необходимости `HasMaxLength`; даты по умолчанию — через `HasDefaultValueSql` (например `now() at time zone 'utc'` для PostgreSQL).
